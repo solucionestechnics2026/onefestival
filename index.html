@@ -424,7 +424,7 @@
   }
   .edition-grid{
     position:relative;display:grid;grid-template-columns:minmax(0,0.86fr) minmax(0,1.14fr);
-    gap:clamp(40px,6vw,88px);align-items:center;
+    gap:clamp(40px,6vw,88px);align-items:start;
   }
   @media (max-width:900px){.edition-grid{grid-template-columns:1fr;}}
 
@@ -483,7 +483,12 @@
     font-family:var(--f-mono);font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:var(--ember);
   }
   .lineup-status i{width:6px;height:6px;border-radius:50%;background:var(--ember);animation:pulse 1.8s ease-in-out infinite;}
-  .lineup-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;}
+  .lineup-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;}
+  @media (max-width:520px){
+    .lineup-grid{grid-template-columns:repeat(2,minmax(0,1fr));}
+    .artist-card.tbd{grid-column:1 / -1;aspect-ratio:auto;min-height:120px;flex-direction:row;}
+    .tbd-q{font-size:56px;}
+  }
 
   .artist-card{
     position:relative;display:block;overflow:hidden;border-radius:8px;
@@ -494,7 +499,7 @@
   .artist-card:hover{transform:translateY(-4px);border-color:var(--ember);box-shadow:0 18px 44px rgba(255,90,46,0.2);}
   .artist-card:hover img{transform:scale(1.04);}
   .artist-tag{
-    position:absolute;left:10px;top:10px;z-index:2;
+    position:absolute;left:8px;top:8px;z-index:2;
     font-family:var(--f-mono);font-size:10px;letter-spacing:0.12em;text-transform:uppercase;
     background:rgba(10,15,12,0.78);backdrop-filter:blur(6px);border:1px solid var(--line-strong);
     padding:5px 10px;border-radius:100px;
@@ -747,12 +752,12 @@
       <div class="tier-grid reveal" role="group" aria-label="Tipos de boleta">
         <button type="button" class="tier" aria-pressed="false" data-name="Early Entry" data-price="$150.000">
           <span class="tier-name">Early Entry</span>
-          <span class="tier-price">$170.000<small>COP</small></span>
+          <span class="tier-price">$150.000<small>COP</small></span>
           <span class="tier-note">Ingreso hasta las 4:00 PM</span>
         </button>
         <button type="button" class="tier" aria-pressed="false" data-name="Any Time" data-price="$170.000">
           <span class="tier-name">Any Time</span>
-          <span class="tier-price">$190.000<small>COP</small></span>
+          <span class="tier-price">$170.000<small>COP</small></span>
           <span class="tier-note">Sin restricción de horario</span>
         </button>
         <button type="button" class="tier" aria-pressed="false" data-name="Zona One" data-price="$300.000">
